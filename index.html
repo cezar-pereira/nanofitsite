@@ -121,22 +121,9 @@
       overflow: hidden;
     }
 
-    .nav-cta::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.3);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
-    }
-
-    .nav-cta:hover::before {
-      width: 300px;
-      height: 300px;
+    /* Remove o efeito de linha do botão de contato */
+    .nav-links .nav-cta::before {
+      display: none;
     }
 
     .nav-cta::after {
@@ -144,8 +131,8 @@
     }
 
     .nav-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 35px rgba(37, 211, 102, 0.7);
     }
 
     .nav-cta span {
@@ -550,12 +537,97 @@
       .about,
       .coming-soon,
       .contact {
-        padding: 50px 25px;
+        padding: 50px 0;
+        margin: 40px auto;
+      }
+
+      /* Remove estilos da classe coming-soon no mobile */
+      .coming-soon {
+        background: transparent;
+        backdrop-filter: none;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        padding: 30px 0;
         margin: 40px auto;
       }
 
       .features-grid {
         grid-template-columns: 1fr;
+      }
+
+      /* Carousel para seção Em Breve no mobile */
+      .coming-soon .carousel-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+      }
+
+      .carousel-container {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 0;
+        width: 100%;
+        position: relative;
+      }
+
+      .carousel-container .carousel-slide {
+        min-width: 100%;
+        width: 100%;
+        max-width: 100%;
+        flex-shrink: 0;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      /* Cards ocupam 100% da largura sem mostrar elementos adjacentes */
+      .carousel-container .carousel-slide .feature-card {
+        margin: 0;
+        padding: 40px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        flex-shrink: 0;
+      }
+
+      .carousel-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+      }
+
+      .carousel-btn {
+        display: none;
+      }
+
+      .carousel-dots {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(102, 126, 234, 0.25);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
+      }
+
+      .carousel-dot.active {
+        background: #667eea;
+        width: 24px;
+        border-radius: 4px;
       }
 
       .download-buttons {
@@ -566,6 +638,21 @@
       .download-btn {
         width: 100%;
         max-width: 250px;
+      }
+    }
+
+    /* Desktop: mantém grid normal */
+    @media (min-width: 769px) {
+      .carousel-nav {
+        display: none;
+      }
+
+      .carousel-container {
+        display: grid;
+      }
+
+      .carousel-container .carousel-slide {
+        min-width: auto;
       }
     }
   </style>
@@ -677,42 +764,47 @@
   <!-- Coming Soon Section -->
   <section class="section coming-soon" id="em-breve">
     <h2 class="section-title">Em <strong>Breve</strong></h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="coming-soon-badge">EM BREVE</div>
-        <div class="feature-icon">📊</div>
-        <h3>Acompanhamento de Progresso</h3>
-        <p>Acompanhamento de progresso dos alunos com gráficos visuais e relatórios detalhados de evolução.</p>
-      </div>
+    <div class="carousel-wrapper">
+      <div class="features-grid carousel-container" id="comingSoonCarousel">
+        <div class="feature-card carousel-slide">
+          <div class="coming-soon-badge">EM BREVE</div>
+          <div class="feature-icon">📊</div>
+          <h3>Acompanhamento de Progresso</h3>
+          <p>Acompanhamento de progresso dos alunos com gráficos visuais e relatórios detalhados de evolução.</p>
+        </div>
 
-      <div class="feature-card">
-        <div class="coming-soon-badge">EM BREVE</div>
-        <div class="feature-icon">🥗</div>
-        <h3>Área de Nutrição</h3>
-        <p>Recursos completos para gestão de planos alimentares e acompanhamento nutricional dos alunos.</p>
-      </div>
+        <div class="feature-card carousel-slide">
+          <div class="coming-soon-badge">EM BREVE</div>
+          <div class="feature-icon">🥗</div>
+          <h3>Área de Nutrição</h3>
+          <p>Recursos completos para gestão de planos alimentares e acompanhamento nutricional dos alunos.</p>
+        </div>
 
-      <div class="feature-card">
-        <div class="coming-soon-badge">EM BREVE</div>
-        <div class="feature-icon">💳</div>
-        <h3>Cobranças de Mensalidade</h3>
-        <p>Sistema integrado para gerenciamento e controle de cobranças de mensalidades dos alunos.</p>
-      </div>
+        <div class="feature-card carousel-slide">
+          <div class="coming-soon-badge">EM BREVE</div>
+          <div class="feature-icon">💳</div>
+          <h3>Cobranças de Mensalidade</h3>
+          <p>Sistema integrado para gerenciamento e controle de cobranças de mensalidades dos alunos.</p>
+        </div>
 
-      <div class="feature-card">
-        <div class="coming-soon-badge">EM BREVE</div>
-        <div class="feature-icon">⚙️</div>
-        <h3>Rotina de Treino Padrão</h3>
-        <p>Sua academia pode definir rotinas de treino padrão que podem ser aplicadas rapidamente aos alunos,
-          otimizando o trabalho da equipe.</p>
-      </div>
+        <div class="feature-card carousel-slide">
+          <div class="coming-soon-badge">EM BREVE</div>
+          <div class="feature-icon">⚙️</div>
+          <h3>Rotina de Treino Padrão</h3>
+          <p>Sua academia pode definir rotinas de treino padrão que podem ser aplicadas rapidamente aos alunos,
+            otimizando o trabalho da equipe.</p>
+        </div>
 
-      <div class="feature-card">
-        <div class="coming-soon-badge">EM BREVE</div>
-        <div class="feature-icon">🎨</div>
-        <h3>App Personalizado da Academia</h3>
-        <p>App com a cara da academia: cores e logomarca personalizados, criando uma experiência única e
-          identificada com sua marca.</p>
+        <div class="feature-card carousel-slide">
+          <div class="coming-soon-badge">EM BREVE</div>
+          <div class="feature-icon">🎨</div>
+          <h3>App Personalizado da Academia</h3>
+          <p>App com a cara da academia: cores e logomarca personalizados, criando uma experiência única e
+            identificada com sua marca.</p>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <div class="carousel-dots"></div>
       </div>
     </div>
   </section>
@@ -770,6 +862,85 @@
         navLinks.classList.remove('active');
       });
     });
+
+    // Carousel para seção "Em Breve"
+    (function () {
+      const carousel = document.getElementById('comingSoonCarousel');
+      const dotsContainer = document.querySelector('.carousel-dots');
+
+      if (!carousel || !dotsContainer) return;
+
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      let currentIndex = 0;
+
+      // Criar dots
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Ir para slide ${index + 1}`);
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+      function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+
+      function goToSlide(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        currentIndex = index;
+        updateCarousel();
+      }
+
+      function nextSlide() {
+        goToSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(currentIndex - 1);
+      }
+
+      // Suporte a swipe touch
+      let startX = 0;
+      let isDragging = false;
+
+      carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      });
+
+      carousel.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+      });
+
+      carousel.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
+        }
+
+        isDragging = false;
+      });
+
+      // Auto-play opcional (descomente se quiser)
+      // setInterval(nextSlide, 5000);
+    })();
   </script>
 </body>
 
