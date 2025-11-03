@@ -22,13 +22,13 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #222;
+      color: #2c3e50;
       line-height: 1.6;
-      background: #0a0e27;
+      background: #f8f9fa;
       background-image:
-        linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(15, 15, 35, 0.95) 100%),
-        radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.15) 0%, transparent 50%);
+        linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.95) 100%),
+        radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.08) 0%, transparent 50%);
       background-attachment: fixed;
     }
 
@@ -38,12 +38,12 @@
       top: 0;
       left: 0;
       right: 0;
-      background: rgba(10, 14, 39, 0.95);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
       z-index: 1000;
       padding: 18px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(102, 126, 234, 0.1);
     }
 
     .nav-container {
@@ -58,7 +58,7 @@
     .nav-logo {
       font-family: 'Inter', sans-serif;
       font-size: 26px;
-      color: #ffffff;
+      color: #2c3e50;
       letter-spacing: 1px;
     }
 
@@ -79,7 +79,7 @@
     }
 
     .nav-links a {
-      color: rgba(255, 255, 255, 0.9);
+      color: #2c3e50;
       text-decoration: none;
       font-weight: 500;
       font-size: 15px;
@@ -105,7 +105,7 @@
     }
 
     .nav-links a:hover {
-      color: #ffffff;
+      color: #667eea;
     }
 
     .nav-cta {
@@ -155,8 +155,8 @@
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 100%);
-      color: white;
+      background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+      color: #2c3e50;
       padding: 160px 20px 100px;
       text-align: center;
       position: relative;
@@ -171,8 +171,8 @@
       right: 0;
       bottom: 0;
       background:
-        radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, rgba(118, 75, 162, 0.2) 0%, transparent 50%);
+        radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(118, 75, 162, 0.08) 0%, transparent 50%);
     }
 
     .hero-content {
@@ -189,6 +189,7 @@
       margin-bottom: 25px;
       line-height: 1.3;
       letter-spacing: -0.5px;
+      color: #2c3e50;
     }
 
     .hero h1 strong {
@@ -208,6 +209,7 @@
       margin-right: auto;
       font-weight: 300;
       line-height: 1.8;
+      color: #5a6c7d;
     }
 
     .download-buttons {
@@ -221,20 +223,20 @@
     .download-btn {
       display: inline-block;
       padding: 15px 30px;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
+      background: rgba(102, 126, 234, 0.1);
+      color: #2c3e50;
       text-decoration: none;
       border-radius: 12px;
       font-weight: 500;
       transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(102, 126, 234, 0.2);
       backdrop-filter: blur(10px);
     }
 
     .download-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(102, 126, 234, 0.2);
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
     }
 
     .download-btn img {
@@ -256,7 +258,7 @@
       font-weight: 300;
       text-align: center;
       margin-bottom: 60px;
-      color: #ffffff;
+      color: #2c3e50;
       letter-spacing: -1px;
     }
 
@@ -269,12 +271,13 @@
     }
 
     .about {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(10px);
       border-radius: 24px;
       margin: 60px auto;
       padding: 80px 40px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(102, 126, 234, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
     }
 
     .about-content {
@@ -286,13 +289,13 @@
 
     .about-text {
       font-size: 18px;
-      color: rgba(255, 255, 255, 0.8);
+      color: #5a6c7d;
       line-height: 1.9;
       font-weight: 300;
     }
 
     .about-text strong {
-      color: #ffffff;
+      color: #2c3e50;
       font-weight: 600;
     }
 
@@ -304,49 +307,50 @@
     }
 
     .feature-card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(10px);
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
       transition: all 0.4s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(102, 126, 234, 0.1);
     }
 
     .feature-card:hover {
       transform: translateY(-8px);
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 15px 50px rgba(102, 126, 234, 0.2);
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 15px 50px rgba(102, 126, 234, 0.15);
       border-color: rgba(102, 126, 234, 0.3);
     }
 
     .feature-icon {
       font-size: 52px;
       margin-bottom: 25px;
-      filter: drop-shadow(0 4px 10px rgba(102, 126, 234, 0.3));
+      filter: drop-shadow(0 4px 10px rgba(102, 126, 234, 0.2));
     }
 
     .feature-card h3 {
       font-size: 24px;
       font-weight: 600;
       margin-bottom: 18px;
-      color: #ffffff;
+      color: #2c3e50;
       letter-spacing: -0.5px;
     }
 
     .feature-card p {
-      color: rgba(255, 255, 255, 0.7);
+      color: #5a6c7d;
       line-height: 1.8;
       font-weight: 300;
     }
 
     .coming-soon {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(10px);
       border-radius: 24px;
       margin: 60px auto;
       padding: 80px 40px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 193, 7, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
     }
 
     .coming-soon-badge {
@@ -364,15 +368,16 @@
     }
 
     .contact {
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
       backdrop-filter: blur(20px);
-      color: white;
+      color: #2c3e50;
       border-radius: 24px;
       margin: 60px auto;
       padding: 80px 40px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(102, 126, 234, 0.2);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
     }
 
     .contact::before {
@@ -382,7 +387,7 @@
       right: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
       animation: rotate 25s linear infinite;
     }
 
@@ -415,6 +420,7 @@
       opacity: 0.9;
       font-weight: 300;
       line-height: 1.8;
+      color: #5a6c7d;
     }
 
     .whatsapp-btn {
@@ -452,9 +458,9 @@
     }
 
     .footer {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(44, 62, 80, 0.95);
       backdrop-filter: blur(10px);
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.7);
       padding: 50px 20px;
       text-align: center;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -465,7 +471,7 @@
     }
 
     .footer-links a {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.8);
       text-decoration: none;
       margin: 0 20px;
       transition: color 0.3s ease;
@@ -492,7 +498,7 @@
     .menu-toggle span {
       width: 25px;
       height: 2px;
-      background: #ffffff;
+      background: #2c3e50;
       border-radius: 2px;
       transition: all 0.3s ease;
     }
@@ -507,13 +513,14 @@
         top: 70px;
         left: -100%;
         width: 100%;
-        background: rgba(10, 14, 39, 0.98);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
         flex-direction: column;
         padding: 30px;
         gap: 25px;
         transition: left 0.3s ease;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid rgba(102, 126, 234, 0.1);
       }
 
       .nav-links.active {
@@ -652,7 +659,7 @@
       </div>
 
       <div class="feature-card">
-        <div class="feature-icon">🎬</div>
+        <div class="feature-icon">🏋️</div>
         <h3>Detalhes de Execução</h3>
         <p>Seus alunos podem ver como executar os treinos com detalhes completos, garantindo a prática correta
           de cada exercício proposto pela academia.</p>
@@ -743,9 +750,9 @@
     window.addEventListener('scroll', function () {
       const navbar = document.getElementById('navbar');
       if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.4)';
+        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.12)';
       } else {
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.08)';
       }
     });
 
