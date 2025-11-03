@@ -330,6 +330,71 @@
       font-weight: 300;
     }
 
+    /* Accordion para funcionalidades no mobile */
+    .feature-card-header {
+      display: none;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .feature-card-content {
+      transition: all 0.3s ease;
+    }
+
+    .feature-card-toggle {
+      display: inline-block;
+      margin-left: auto;
+      width: 10px;
+      height: 10px;
+      border-right: 1.5px solid #667eea;
+      border-bottom: 1.5px solid #667eea;
+      transform: rotate(45deg);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    .feature-card.expanded .feature-card-toggle {
+      transform: rotate(225deg);
+    }
+
+    /* Desktop: mostra tudo normalmente */
+    @media (min-width: 769px) {
+      #funcionalidades .feature-card {
+        cursor: default;
+        padding: 40px;
+      }
+
+      /* Esconde o header no desktop */
+      #funcionalidades .feature-card-header {
+        display: none !important;
+      }
+
+      /* Mostra o ícone e título como elementos separados no desktop */
+      #funcionalidades .feature-card>.feature-icon {
+        display: block !important;
+        margin-bottom: 25px;
+        font-size: 52px;
+      }
+
+      #funcionalidades .feature-card>h3 {
+        display: block !important;
+        margin-bottom: 18px;
+        font-size: 24px;
+      }
+
+      #funcionalidades .feature-card-content {
+        max-height: none !important;
+        opacity: 1 !important;
+        margin-top: 0 !important;
+        overflow: visible !important;
+      }
+
+      #funcionalidades .feature-card-toggle {
+        display: none !important;
+      }
+    }
+
     .coming-soon {
       background: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(10px);
@@ -554,6 +619,72 @@
 
       .features-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      /* Accordion para funcionalidades no mobile */
+      #funcionalidades .feature-card {
+        padding: 20px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      /* Esconde os elementos diretos no mobile */
+      #funcionalidades .feature-card>.feature-icon,
+      #funcionalidades .feature-card>h3 {
+        display: none;
+      }
+
+      #funcionalidades .feature-card-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 0;
+        transition: all 0.3s ease;
+      }
+
+      #funcionalidades .feature-card-header .feature-icon {
+        font-size: 32px;
+        margin-bottom: 0;
+        transition: all 0.3s ease;
+      }
+
+      #funcionalidades .feature-card-header h3 {
+        margin-bottom: 0;
+        flex: 1;
+        font-size: 18px;
+        transition: all 0.3s ease;
+      }
+
+      #funcionalidades .feature-card-content {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+        margin-top: 0;
+      }
+
+      #funcionalidades .feature-card.expanded .feature-card-content {
+        max-height: 500px;
+        opacity: 1;
+        margin-top: 15px;
+      }
+
+      #funcionalidades .feature-card.expanded .feature-card-header {
+        margin-bottom: 0;
+        align-items: flex-start;
+      }
+
+      #funcionalidades .feature-card.expanded .feature-card-header .feature-icon {
+        margin-bottom: 0;
+      }
+
+      #funcionalidades .feature-card.expanded .feature-card-header h3 {
+        margin-bottom: 0;
+      }
+
+      #funcionalidades .feature-card-content p {
+        margin-top: 0;
       }
 
       /* Carousel para seção Em Breve no mobile */
@@ -727,36 +858,71 @@
       <div class="feature-card">
         <div class="feature-icon">💪</div>
         <h3>Treinos Personalizados</h3>
-        <p>Sua academia pode criar e atribuir treinos individuais para cada aluno, com instruções detalhadas e
-          específicas para cada exercício.</p>
+        <div class="feature-card-header">
+          <div class="feature-icon">💪</div>
+          <h3>Treinos Personalizados</h3>
+          <span class="feature-card-toggle"></span>
+        </div>
+        <div class="feature-card-content">
+          <p>Sua academia pode criar e atribuir treinos individuais para cada aluno, com instruções detalhadas e
+            específicas para cada exercício.</p>
+        </div>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">📏</div>
         <h3>Acompanhamento de Medidas</h3>
-        <p>Acompanhe informações de medidas corporais dos alunos, permitindo um monitoramento completo de sua
-          evolução na academia.</p>
+        <div class="feature-card-header">
+          <div class="feature-icon">📏</div>
+          <h3>Acompanhamento de Medidas</h3>
+          <span class="feature-card-toggle"></span>
+        </div>
+        <div class="feature-card-content">
+          <p>Acompanhe informações de medidas corporais dos alunos, permitindo um monitoramento completo de sua
+            evolução na academia.</p>
+        </div>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">📅</div>
         <h3>Agendamento de Aulas</h3>
-        <p>Seus alunos podem acompanhar todas as aulas regulares e excepcionais da academia, mantendo-se sempre
-          atualizados sobre os horários disponíveis.</p>
+        <div class="feature-card-header">
+          <div class="feature-icon">📅</div>
+          <h3>Agendamento de Aulas</h3>
+          <span class="feature-card-toggle"></span>
+        </div>
+        <div class="feature-card-content">
+          <p>Seus alunos podem acompanhar todas as aulas regulares e excepcionais da academia, mantendo-se sempre
+            atualizados sobre os horários disponíveis.</p>
+        </div>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">🏋️</div>
         <h3>Detalhes de Execução</h3>
-        <p>Seus alunos podem ver como executar os treinos com detalhes completos, garantindo a prática correta
-          de cada exercício proposto pela academia.</p>
+        <div class="feature-card-header">
+          <div class="feature-icon">🏋️</div>
+          <h3>Detalhes de Execução</h3>
+          <span class="feature-card-toggle"></span>
+        </div>
+        <div class="feature-card-content">
+          <p>Seus alunos podem ver como executar os treinos com detalhes completos, garantindo a prática correta
+            de cada exercício proposto pela academia.</p>
+        </div>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">📢</div>
         <h3>Comunicação Direta</h3>
-        <p>Comunique-se diretamente com seus alunos sobre novas aulas, eventos e novidades da academia,
-          mantendo todos sempre informados e engajados.</p>
+        <div class="feature-card-header">
+          <div class="feature-icon">📢</div>
+          <h3>Comunicação Direta</h3>
+          <span class="feature-card-toggle"></span>
+        </div>
+        <div class="feature-card-content">
+          <p>Comunique-se diretamente com seus alunos sobre novas aulas, eventos e novidades da academia,
+            mantendo todos sempre informados e engajados.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -940,6 +1106,55 @@
 
       // Auto-play opcional (descomente se quiser)
       // setInterval(nextSlide, 5000);
+    })();
+
+    // Accordion para funcionalidades no mobile
+    (function () {
+      const featuresSection = document.getElementById('funcionalidades');
+      if (!featuresSection) return;
+
+      const featureCards = featuresSection.querySelectorAll('.feature-card');
+      const isMobile = window.innerWidth <= 768;
+
+      function toggleCard(card) {
+        // No mobile, funciona como accordion (apenas um aberto por vez)
+        if (isMobile) {
+          const wasExpanded = card.classList.contains('expanded');
+
+          // Fecha todos os cards
+          featureCards.forEach(c => c.classList.remove('expanded'));
+
+          // Abre apenas o card clicado se ele não estava aberto
+          if (!wasExpanded) {
+            card.classList.add('expanded');
+          }
+        }
+      }
+
+      featureCards.forEach(card => {
+        card.addEventListener('click', function (e) {
+          // Previne o comportamento padrão se não for um link
+          if (!e.target.closest('a')) {
+            toggleCard(card);
+          }
+        });
+      });
+
+      // Ajusta o comportamento quando a tela é redimensionada
+      let resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          const newIsMobile = window.innerWidth <= 768;
+          if (newIsMobile !== isMobile) {
+            // Recarrega a página se mudou entre mobile e desktop
+            // ou remove as classes expanded no desktop
+            if (!newIsMobile) {
+              featureCards.forEach(c => c.classList.remove('expanded'));
+            }
+          }
+        }, 250);
+      });
     })();
   </script>
 </body>
